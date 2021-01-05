@@ -1,0 +1,41 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: String!
+  userName: String!
+  email: String!
+}
+
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
+type Post {
+  id: Int!
+  title: String!
+  votes: Int
+  authorId: Int
+}
+
+type Author {
+  id: Int!
+  firstName: String
+  lastName: String
+  posts: [Post!]!
+}
+
+type Query {
+  author(id: Int!): Author!
+}
+
+type Mutation {
+  login(password: String!, userName: String!): AuthPayload!
+  upvotePost(upvotePostData: UpvotePostInput!): Post!
+}
+
+input UpvotePostInput {
+  postId: Float!
+}
