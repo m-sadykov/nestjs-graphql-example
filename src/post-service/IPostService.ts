@@ -1,6 +1,6 @@
 import { GetPostQueryParams } from "./model/contract/GetPostQueryParams";
+import { Post } from "./model/contract/Post";
 import { UpvoteParams } from "./model/contract/UpvoteParams";
-import { Post } from "../graphql-api/models/post/post.model";
 
 export interface IPostService {
     findAll(queryParams: GetPostQueryParams): Promise<Post[]>
