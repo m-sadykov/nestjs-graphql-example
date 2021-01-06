@@ -29,6 +29,8 @@ module.exports = {
     "@typescript-eslint/no-floating-promises": "error",
     "@typescript-eslint/semi": ["error"],
     "max-len": ["error", { "code": 100, "comments": 140, "ignoreUrls": true, "ignoreTemplateLiterals": true, "ignoreRegExpLiterals": true, "ignoreStrings": true }],
-    "eol-last": ["error", "always"]
+    "eol-last": ["error", "always"],
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    
   },
 };

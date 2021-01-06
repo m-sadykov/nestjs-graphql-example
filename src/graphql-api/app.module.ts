@@ -21,11 +21,20 @@ import { JwtStrategy } from "./strategies/jwt.strategy";
             session: false
         }),
         GraphQLModule.forRoot({
-            debug: true,
+            debug: process.env.NODE_ENV === "dev" ? true : false,
             playground: true,
             autoSchemaFile: join(process.cwd(), "./graphql-api/schema.gql"),
             // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-            context: ({ req }) => ({ req })
+            context: ({ req }) => ({ req }),
+            // formatError: (error: GraphQLError) => {
+            //     const graphqlFormattedError: GraphQLFormattedError = {
+            //         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+            //         message: error.extensions?.exception?.response?.message || error.message
+            //         // status: error.extensions?.exception?.status,
+
+            //     };
+            //     return graphqlFormattedError;
+            // }
         })
     ],
     controllers: [],
